@@ -18,8 +18,8 @@ class CreatePacientesTable extends Migration
             $table->string('nome');
             $table->string('nome_mae');
             $table->date('data_nascimento');
-            $table->string('cpf');
-            $table->string('cns');
+            $table->string('cpf')->unique();
+            $table->string('cns')->unique();
             $table->string('foto')->nullable();
             $table->integer('endereco_id');
             $table->timestamps();
