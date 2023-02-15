@@ -20,6 +20,21 @@ class PacientesController extends Controller
     }
 
     public function store(Request $request) {
+        $request->validade([
+            'nome' => 'required|max:255',
+            'nome_mae' => 'required|max:255',
+            'data_nascimento' => 'required',
+            'cpf' => 'required|max:11|min:11',
+            'cns' => 'required|max:15|min:15',
+            'cep' => 'required|max:8|min:8',
+            'endereco' => 'required',
+            'numero' => 'required',
+            'complemento' => 'nullable',
+            'bairro' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required|max:2'
+        ]);
+
         $endereco = Endereco::create([
             'cep' => $request->cep,
             'endereco' => $request->endereco,
@@ -58,6 +73,21 @@ class PacientesController extends Controller
     }
 
     public function update(Request $request, $id) {
+        $request->validade([
+            'nome' => 'required|max:255',
+            'nome_mae' => 'required|max:255',
+            'data_nascimento' => 'required',
+            'cpf' => 'required|max:11|min:11',
+            'cns' => 'required|max:15|min:15',
+            'cep' => 'required|max:8|min:8',
+            'endereco' => 'required',
+            'numero' => 'required',
+            'complemento' => 'nullable',
+            'bairro' => 'required',
+            'cidade' => 'required',
+            'estado' => 'required|max:2'
+        ]);
+
         $paciente = Paciente::findOrFail($id);
 
         $paciente->update([

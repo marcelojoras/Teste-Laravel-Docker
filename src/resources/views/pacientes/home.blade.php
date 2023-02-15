@@ -53,6 +53,15 @@
 <body>
     <h1>Pacientes do sistema</h1>
     <a href="{{ route('criar_paciente') }}"><button class="adicionar">Adicionar paciente</button></a>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <br>
     <table>
         <tr>
