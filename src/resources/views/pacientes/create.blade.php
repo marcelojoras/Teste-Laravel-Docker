@@ -5,6 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Paciente</title>
+    <style>
+        input {
+            height: 20px;
+            width: 200px;
+            font-family: arial, sans-serif;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-family: arial, sans-serif;
+            font-weight: bold;
+        }
+
+        button {
+            width: 200px;
+            background: #43b1e5;
+            border: none;
+            height: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
 </head>
 <body>
     <form action="{{ route('registrar_paciente') }}" method="post">

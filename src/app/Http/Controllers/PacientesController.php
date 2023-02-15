@@ -39,7 +39,9 @@ class PacientesController extends Controller
             'endereco_id' => $endereco->id
         ]);
 
-        return 'Paciente criado com sucesso';
+        $pacientes = Paciente::all()->toArray();
+
+        return view('pacientes.home', ['pacientes' => $pacientes]);
     }
 
     public function show($id) {
@@ -79,7 +81,9 @@ class PacientesController extends Controller
             'estado' => $request->estado
         ]);
 
-        return 'Paciente atualizado com sucesso!';
+        $pacientes = Paciente::all()->toArray();
+
+        return view('pacientes.home', ['pacientes' => $pacientes]);
     }
 
     public function delete($id) {
@@ -94,6 +98,8 @@ class PacientesController extends Controller
         $paciente->delete();
         $endereco->delete();
 
-        return 'Paciente excluido com sucesso!';
+        $pacientes = Paciente::all()->toArray();
+
+        return view('pacientes.home', ['pacientes' => $pacientes]);
     }
 }
