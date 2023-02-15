@@ -21,3 +21,4 @@ Route::get('/pacientes/ver/{id}', 'App\Http\Controllers\PacientesController@show
 Route::get('/pacientes/editar/{id}', 'App\Http\Controllers\PacientesController@edit')->name('editar_paciente');
 Route::post('/pacientes/editar/{id}', 'App\Http\Controllers\PacientesController@update')->name('alterar_paciente');
 Route::get('/pacientes/excluir/{id}', 'App\Http\Controllers\PacientesController@delete')->name('excluir_paciente');
+Route::get('/consultaCep/{cep}', 'App\Http\Controllers\PacientesController@consultaCep');

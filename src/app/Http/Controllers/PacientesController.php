@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Endereco;
+use Illuminate\Support\Facades\Http;
 
 class PacientesController extends Controller
 {
@@ -96,5 +97,11 @@ class PacientesController extends Controller
         $pacientes = Paciente::all()->toArray();
 
         return view('pacientes.home', ['pacientes' => $pacientes]);
+    }
+
+    public function consultaCep($cep) {
+        $response = Http::get('https://viacep.com.br/ws/'.$cep.'/json');
+
+        return $response;
     }
 }
