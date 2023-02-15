@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "a003c4e7-3f30-45a8-8450-90514b079bb8",
+		"name": "Endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21671728"
+	},
+	"item": [
+		{
+			"name": "Busca CEP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/consultaCep/92330450",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"consultaCep",
+						"92330450"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
