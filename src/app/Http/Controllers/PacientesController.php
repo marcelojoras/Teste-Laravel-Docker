@@ -88,11 +88,6 @@ class PacientesController extends Controller
 
     public function delete($id) {
         $paciente = Paciente::findOrFail($id);
-        return view('pacientes.delete', ['paciente' => $paciente]);
-    }
-
-    public function destroy($id) {
-        $paciente = Paciente::findOrFail($id);
         $endereco = Endereco::findOrFail($paciente->endereco_id);
 
         $paciente->delete();
